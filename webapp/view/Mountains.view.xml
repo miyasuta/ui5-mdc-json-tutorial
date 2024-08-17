@@ -19,7 +19,26 @@
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				
+				<mdc:FilterBar id="filterbar" delegate="{name: 'mdc/tutorial/delegate/JSONFilterBarDelegate'}"
+								p13nMode="Item,Value">
+					<mdc:basicSearchField>
+						<mdc:FilterField delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
+										dataType="sap.ui.model.type.String"
+										placeholder="Search Mountains"
+										conditions="{$filters>/conditions/$search}"
+										maxConditions="1"/>
+					</mdc:basicSearchField>
+					<mdc:filterItems>
+						<mdc:FilterField
+							label="Name"
+							propertyKey="name"
+							dataType="sap.ui.model.type.String"
+							conditions="{$filters>/conditions/name}"
+							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
+					</mdc:filterItems>
+					<mdc:dependents>
+					</mdc:dependents>
+				</mdc:FilterBar>				
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
@@ -34,7 +53,8 @@
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
-						bindingPath: 'mountains>/mountains'
+						bindingPath: 'mountains>/mountains',
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
 					}
 				}">
 				<mdct:Column 
