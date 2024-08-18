@@ -19,7 +19,14 @@
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<mdc:FilterBar id="filterbar" delegate="{name: 'mdc/tutorial/delegate/JSONFilterBarDelegate'}"
+				<mdc:FilterBar id="filterbar" delegate="{
+								name: 'mdc/tutorial/delegate/JSONFilterBarDelegate',
+								payload: {
+									valueHelp: {
+										name: 'NameValueHelp',
+										range: 'RangeValueHelp'
+									}
+								}}"
 								p13nMode="Item,Value">
 					<mdc:basicSearchField>
 						<mdc:FilterField delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
@@ -34,9 +41,11 @@
 							propertyKey="name"
 							dataType="sap.ui.model.type.String"
 							conditions="{$filters>/conditions/name}"
+							valueHelp="name-vh"
 							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
 					</mdc:filterItems>
 					<mdc:dependents>
+						<core:Fragment fragmentName="mdc.tutorial.view.fragment.NameValueHelp" type="XML" />
 					</mdc:dependents>
 				</mdc:FilterBar>				
 			</f:DynamicPageHeader>
