@@ -5,6 +5,7 @@ import FilterField from "sap/ui/mdc/FilterField";
 import Element from "sap/ui/core/Element";
 import Fragment from "sap/ui/core/Fragment";
 import ValueHelp from "sap/ui/mdc/ValueHelp";
+import JSONBaseDelegate from "./JSONBaseDelegate";
 
 interface FilterBarPayload {
     valueHelp: {
@@ -12,7 +13,7 @@ interface FilterBarPayload {
     }
 }
 
-var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate)
+var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate)
 JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo
 
 const _createValueHelp = async (filterBar:FilterBar, propertyKey:string) => {

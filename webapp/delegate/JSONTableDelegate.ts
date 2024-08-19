@@ -7,13 +7,14 @@ import Text from "sap/m/Text"
 import Filter from "sap/ui/model/Filter"
 import FilterOperator from "sap/ui/model/FilterOperator"
 import FilterBar from "sap/ui/mdc/FilterBar"
+import JSONBaseDelegate from "./JSONBaseDelegate"
 
 interface TablePayload {
     bindingPath: string
     searchKeys: string[]
 }
 
-const JSONTableDelegate = Object.assign({}, TableDelegate)
+const JSONTableDelegate = Object.assign({}, TableDelegate, JSONBaseDelegate)
 
 JSONTableDelegate.fetchProperties = async () => {
     return JSONPropertyInfo.filter((p) => p.key !== "$search")

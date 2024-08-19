@@ -74,7 +74,7 @@
 				<mdct:Column 
 					propertyKey="height"
 					header="Height">
-					<Text text="{path: 'mountains>height'}"/>
+					<Text text="{path: 'mountains>height', type: 'mdc.tutorial.model.type.LengthMeter'}"/>
 				</mdct:Column>
 				<mdct:Column 
 					propertyKey="range"

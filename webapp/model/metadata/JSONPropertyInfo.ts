@@ -32,13 +32,13 @@ export default [
 		label: "Height",
 		visible: true,
 		path: "height",
-		dataType: "sap.ui.model.type.Integer"
+		dataType: "mdc.tutorial.model.type.LengthMeter"
 	},{
 		key: "prominence",
 		label: "Prominence",
 		visible: true,
 		path: "prominence",
-		dataType: "sap.ui.model.type.Integer"
+		dataType: "mdc.tutorial.model.type.LengthMeter"
 	},{
 		key: "range",
 		label: "Range",
